@@ -1,13 +1,17 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Uncomplicated registry Action'
+description: 'Run Uncomplicated registry upload command as part of a GitHub action workflow'
+author: 'MichielBijland'
+
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+  version:
+    description: 'uncomplicated registry version'
+    default: 'latest'
+    required: false
+
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  output:
+    description: 'Results of running the changie command'
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
